@@ -1,0 +1,11 @@
+# Binaries
+main
+a.out
+
+# Object files
+*.o
+
+# Editor junk files
+*~
+*.bak
+*.swp
