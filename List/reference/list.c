@@ -1,10 +1,6 @@
-// GRR20191053 Richard Fernando Heise Ferreira 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 int create_list(t_list *l) {
     l->start = NULL;
@@ -12,15 +8,11 @@ int create_list(t_list *l) {
     return 1;
 }
 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
 int is_list_empty(t_list *l) {
     if (l->start == NULL || l->size == 0)
         return 1;
     return 0;
 }
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 /* um ponteiro auxiliar destroi a proxima posição */
 /* enquanto o inicio percorre a lista. Custo linear */
@@ -43,8 +35,6 @@ void destroy_list(t_list *l) {
     printf("Não destruida: lista vazia\n");
 }
 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
 /* um ponteiro auxiliar aponta para a primeira posição */
 /* o inicio passa a apontar para o auxiliar */
 int insert_at_beginning(int x, t_list *l) {
@@ -59,8 +49,6 @@ int insert_at_beginning(int x, t_list *l) {
     l->size++;
     return 1; 
 }
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 /* percorre a lista, usando um auxiliar, até achar o fim */
 /* o fim passa a apontar para o auxiliar e este recebe null */
@@ -85,8 +73,6 @@ int insert_at_end(int x, t_list *l) {
     l->size++;
     return 1;
 }
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 /* insere um elemento na posição correta */
 int insert_in_order(int x, t_list *l) {
@@ -142,8 +128,6 @@ int insert_in_order(int x, t_list *l) {
     return 0;
 }   
 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
 /* imprimimos elementos até a última a posição */
 void print_list(t_list *l) {
     if (! is_list_empty(l)) {
@@ -161,8 +145,6 @@ void print_list(t_list *l) {
         printf("\n");
     }
 }
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 /* se a lista não é vazia vamos fazer o inicio */
 /* apontar para o próximo nodo e liberar o antigo primeiro nodo*/
@@ -183,8 +165,6 @@ int remove_first(int *item, t_list *l) {
     }
     return 0;
 }
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 /* andamos até o último nodo e o removemos */
 int remove_last(int *item, t_list *l) {
@@ -214,8 +194,6 @@ int remove_last(int *item, t_list *l) {
     }
     return 0;
 }
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 /* remove um nodo se ele é igual a chave */
 int remove_item(int key, int *item, t_list *l) {
@@ -263,8 +241,6 @@ int remove_item(int key, int *item, t_list *l) {
     return 0;
 }
 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
 /* verificamos se o elemento chave está na lista */
 int belongs_to_list(int key, t_list *l) {
     t_node *aux_ptr = malloc(sizeof(t_node));
@@ -287,8 +263,6 @@ int belongs_to_list(int key, t_list *l) {
     return 0;
 }
 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
  /* caminhamos até o último elemento da lista l */
  /* fazemos esse elemento apontar para o inicio da lista m */
 int concatenate_lists(t_list *l, t_list *m) {
@@ -306,8 +280,6 @@ int concatenate_lists(t_list *l, t_list *m) {
     m->start = NULL;
     return 1;
 }
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 int copy_list(t_list *l, t_list *m) {
     create_list(m);
